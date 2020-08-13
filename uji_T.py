@@ -1,30 +1,33 @@
-
+'''
 nama_variabel = input('nama variabel? ')
-sig_1 = input('Sig pertama : ')
-sig_2_Vassumed = input('Sig kedua atas (assumed): ')
-sig_2_Vnotassumed = input('Sig kedua bawah (not assumed):')
-sig_1_bool = int(sig_1)
-sig_2_atas = int(sig_2_Vassumed)
-sig_2_bawah = int(sig_2_Vnotassumed)
+sig_1 = float(input('Sig pertama : '))
+sig_2_Vassumed = float(input('Sig kedua atas (assumed): '))
+sig_2_Vnotassumed = float(input('Sig kedua bawah (not assumed):'))
+'''
 
-if sig_1_bool >= 0.05:
-    if sig_2_atas <= 0.05:
-        print('Hasil Signifikan')
-        print('Kesimpulan : ada perbedaan rata-rata provinsi', (nama_variabel),'tinggi dengan',(nama_variabel),'rendah.')
-    elif sig_2_atas >= 0.05:
-        print('Hasil tidak Signifikan')
-        print('Kesimpulan : tidak ada perbedaan rata-rata provinsi', (nama_variabel),'tinggi dengan',(nama_variabel),'rendah.')
+while True:
+    nama_variabel = input('nama variabel? ')
+    sig_1 = float(input('Sig pertama : '))
+    sig_2_Vassumed = float(input('Sig kedua atas (assumed): '))
+    sig_2_Vnotassumed = float(input('Sig kedua bawah (not assumed):'))
 
-elif sig_1_bool <= 0.05:
-    if sig_2_bawah <= 0.05:
-        print('Hasil Signifikan')
-        print('Kesimpulan : ada perbedaan rata-rata provinsi', (nama_variabel),'tinggi dengan',(nama_variabel),'rendah.')
-    elif sig_2_bawah >= 0.05:
-        print('Hasil tidak Signifikan')
-        print('Kesimpulan : tidak ada perbedaan rata-rata provinsi', (nama_variabel),'tinggi dengan',(nama_variabel),'rendah.')
-
-else:
-    print('something wrong')
+    print(nama_variabel)
+    if sig_1 > 0.05:
+        if sig_2_Vassumed < 0.05:
+            print('Hasil Signifikan')
+            print('Kesimpulan : ada perbedaan rata-rata provinsi', (nama_variabel),'tinggi dengan',(nama_variabel),'rendah.')
+        elif sig_2_Vassumed > 0.05:
+            print('Hasil tidak Signifikan')
+            print('Kesimpulan : tidak ada perbedaan rata-rata provinsi', (nama_variabel),'tinggi dengan',(nama_variabel),'rendah.')
+    elif sig_1 < 0.05:
+        if sig_2_Vnotassumed < 0.05:
+            print('Hasil Signifikan')
+            print('Kesimpulan : ada perbedaan rata-rata provinsi', (nama_variabel),'tinggi dengan',(nama_variabel),'rendah.')
+        elif sig_2_Vnotassumed > 0.05:
+            print('Hasil tidak Signifikan')
+            print('Kesimpulan : tidak ada perbedaan rata-rata provinsi', (nama_variabel),'tinggi dengan',(nama_variabel),'rendah.')
+    else:
+        print('something wrong')
 
 
 
